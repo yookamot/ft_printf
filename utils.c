@@ -1,42 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yookamot <yookamot@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yookamot <yookamot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 19:40:58 by yookamot          #+#    #+#             */
-/*   Updated: 2024/11/11 20:57:34 by yookamot         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:16:53 by yookamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-char	*ft_utoa(unsigned int n)
-{
-	char			*str;
-	unsigned int	tmp;
-	size_t			len;
-
-	len = 1;
-	tmp = n;
-	while (tmp >= 10)
-	{
-		tmp /= 10;
-		len++;
-	}
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
-	while (len > 0)
-	{
-		str[len - 1] = n % 10 + '0';
-		n /= 10;
-		len--;
-	}
-	return (str);
-}
 
 int	print_hex(unsigned long num, int is_upper)
 {
@@ -59,4 +33,54 @@ int	print_hex(unsigned long num, int is_upper)
 			digit += 'a' - 10;
 	}
 	return (count + write(1, &digit, 1));
+}
+
+int	get_num_length(int nbr)
+{
+	int	count;
+
+	count = 0;
+	if (nbr == -2147483648)
+		return (11);
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		count++;
+	}
+	while (nbr > 0)
+	{
+		nbr /= 10;
+		count++;
+	}
+	return (count);
+}
+
+void	ft_putnbr_unsigned(unsigned int nbr)
+{
+	char	num;
+
+	if (nbr >= 10)
+	{
+		ft_putnbr_unsigned(nbr / 10);
+	}
+	num = nbr % 10 + '0';
+	write(1, &num, 1);
+	return ;
+}
+
+int	get_num_length_unsigned(unsigned int nbr)
+{
+	int	count;
+
+	count = 0;
+	if (nbr == 0)
+		return (1);
+	while (nbr > 0)
+	{
+		nbr /= 10;
+		count++;
+	}
+	return (count);
 }

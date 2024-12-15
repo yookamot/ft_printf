@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yookamot <yookamot@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yookamot <yookamot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:00:48 by yookamot          #+#    #+#             */
-/*   Updated: 2024/11/13 19:14:35 by yookamot         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:10:13 by yookamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	check_type(const char *format, size_t i, va_list args)
 	return (-1);
 }
 
-int	handle_format_char(const char *format, size_t *i, va_list args,
+static int	handle_format_char(const char *format, size_t *i, va_list args,
 		int *total_count)
 {
 	int	print_count;

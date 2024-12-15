@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_usxlx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yookamot <yookamot@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yookamot <yookamot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:24:44 by yookamot          #+#    #+#             */
-/*   Updated: 2024/11/11 20:26:28 by yookamot         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:12:51 by yookamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,11 @@
 int	print_u(va_list args)
 {
 	unsigned int	num;
-	char			*str;
 	int				count;
 
 	num = va_arg(args, unsigned int);
-	str = ft_utoa(num);
-	if (!str)
-		return (-1);
-	count = write(1, str, ft_strlen(str));
-	free(str);
+	ft_putnbr_unsigned(num);
+	count = get_num_length_unsigned(num);
 	return (count);
 }
 

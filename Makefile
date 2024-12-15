@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yookamot <yookamot@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: yookamot <yookamot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/09 21:44:09 by yookamot          #+#    #+#              #
-#    Updated: 2024/11/11 20:11:41 by yookamot         ###   ########.fr        #
+#    Updated: 2024/12/15 17:16:09 by yookamot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-SRCS = ft_printf.c ft_utils.c print_cspdi.c print_percent.c print_usxlx.c
+SRCS = ft_printf.c utils.c print_cspdi.c print_percent.c print_usxlx.c
 OBJS = $(SRCS:.c=.o)
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a

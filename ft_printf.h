@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yookamot <yookamot@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yookamot <yookamot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 21:09:02 by yookamot          #+#    #+#             */
-/*   Updated: 2024/11/11 20:28:05 by yookamot         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:17:39 by yookamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int		print_small_x(va_list args);
 int		print_large_x(va_list args);
 int		print_percent(void);
 int		print_hex_ptr(unsigned long num);
-char	*ft_utoa(unsigned int n);
 int		print_hex(unsigned long num, int is_upper);
+int		get_num_length(int num);
+int		get_num_length_unsigned(unsigned int nbr);
+void	ft_putnbr_unsigned(unsigned int nbr);
 
 #endif

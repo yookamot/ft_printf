@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_cspdi.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yookamot <yookamot@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yookamot <yookamot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:18:48 by yookamot          #+#    #+#             */
-/*   Updated: 2024/11/11 20:30:55 by yookamot         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:01:58 by yookamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,12 @@ int	print_p(va_list args)
 
 int	print_d(va_list args)
 {
-	int		num;
-	char	*str;
-	int		count;
+	int	num;
+	int	count;
 
 	num = va_arg(args, int);
-	str = ft_itoa(num);
-	if (!str)
-		return (-1);
-	count = write(1, str, ft_strlen(str));
-	free(str);
+	ft_putnbr_fd(num, 1);
+	count = get_num_length(num);
 	return (count);
 }
 
